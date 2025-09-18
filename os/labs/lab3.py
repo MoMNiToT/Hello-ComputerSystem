@@ -2,6 +2,9 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from src.myos import *
+from src.process import *
+
 def my_run():
     while process_count() > 0:
         current = process_schedule()
@@ -13,4 +16,3 @@ def my_run():
         elif call.syscall == SyscallType.SYS_WRITE_DOUBLE:
             print(call.arg * 2, end='')  
     print()
-    raise NotImplementedError("my_run function is not implemented yet.")
